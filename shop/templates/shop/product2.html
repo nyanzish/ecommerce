@@ -1,0 +1,455 @@
+{% extends "base.html" %}
+{% load static %}
+{% load ratings %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+
+{% endblock %}
+{% block content %}
+            <!-- Header Area End Here -->
+            <!-- Begin Li's Breadcrumb Area -->
+        
+                <div class="container">
+                        
+                        
+                    
+               
+            
+            <!-- Li's Breadcrumb Area End Here -->
+            <!-- content-wraper start -->
+            <div class="content-wraper">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                           <!-- Product Details Left -->
+                            <div class="product-details-left">
+                                
+                                    <div class="img-wrap">
+                                        <img src="{{ object.image.url }}" class="image_responsive" alt="product image" >
+                                   
+                                    
+                                </div>
+                                
+                            </div>
+                            <!--// Product Details Left -->
+                        </div>
+
+                        <div class=" col-md-6">
+                            <div class="product-details-view-content sp-normal-content">
+                                <div class="product-info">
+                                    <h2>{{ object.title }}</h2>
+                                    <span class="product-details-ref">Product Id: {{ object.id}}</span>
+                                    <div class="rating-box pt-20">
+                                        <div class="rating-wrap">
+                                        <ul class="rating-stars">
+                                            <li style="width:80%" class="stars-active"> 
+                                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    </div>
+                                    <div class="price-box pt-20">
+                                        <span class="new-price new-price-2"><h4>UGX {{ object.price }} </h4></span>
+                                    </div>
+                                    <div class="product-desc">
+                                        <p>
+                                            <span>{{object.description}}
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="text-left">
+                                        <a href="{{ object.get_add_to_cart_url }}" class="btn btn-primary">Add to cart</a>
+                                      </div>
+
+                                      {%comment%}<div class="text-left">
+                                        <a href="{{ object.get_remove_from_cart_url }}" class="btn btn-danger">Remove from cart</a>
+                                      </div>{%endcomment%}
+
+                                    <div class="block-reassurance">
+                                       
+                                                <div class="reassurance-item">
+                                                    <div class="reassurance-icon">
+                                                        
+                                                    </div>
+                                                    <p><i class="fas fa-lock"></i> Security policy (edit with Customer reassurance module)</p>
+                                                </div>
+                                           
+                                                <div class="reassurance-item">
+                                                    <div class="reassurance-icon">
+                                                        
+                                                    </div>
+                                                    <p><i class="fa fa-truck"></i> Delivery policy (edit with Customer reassurance module)</p>
+                                                </div>
+                                            
+                                                <div class="text-left">
+                                                   
+                                                    <p></p><i class="fas fa fa-exchange-alt"></i> Return policy (edit with Customer reassurance module)</p>
+                                                </div>
+                                        
+                                    </div>
+
+                                    <div class="product-additional-info">
+                                        <div class="product-social-sharing">
+                                            <div class="btn-group white">
+                                                    <a class="btn btn-facebook" title="Facebook" target="_blank" href="#"><i class="fab fa-facebook-f  fa-fw"></i> </a>
+                                                    <a class="btn btn-instagram" title="Instagram" target="_blank" href="#"><i class="fab fa-instagram  fa-fw"></i></a>
+                                                    <a class="btn btn-youtube" title="Youtube" target="_blank" href="#"><i class="fab fa-youtube  fa-fw"></i></a>
+                                                    <a class="btn btn-twitter" title="Twitter" target="_blank" href="#"><i class="fab fa-twitter  fa-fw"></i></a>
+                                                </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <!-- content-wraper end -->
+            <!-- Begin Product Area -->
+            <div class="card">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Description</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Product Details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><span>{{object.description}}</span>
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+           <div class="product-details-manufacturer">
+                                        <a href="#">
+                                            {{object.saler}}
+                                        </a>
+                                        <p><span>{{object.description}}</span></p>
+                                       
+                                    </div>
+        </div>
+
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <div class="product-reviews">
+                                        <div class="product-details-comment-block">
+                                            <div class="comment-review">
+                                                    
+                                                <span>Grade</span>
+                                                
+                                                
+                                            </div>
+                                            <div class="comment-author-infos pt-25">
+                                                <span>
+                                                        {% ratings object%}
+                                                        {% block rating_detail %}
+                                                        Whatever you want
+                                                        {% endblock %}
+    
+                                                </span>
+                                                <em>01-12-18</em>
+                                            </div>
+                                            <div class="comment-details">
+                                                <h4 class="title-block">Demo</h4>
+                                                <p>Plaza</p>
+                                            </div>
+                                            <div class="review-btn">
+                                                <a class="review-links" href="#" data-toggle="modal" data-target="#mymodal">Write Your Review!</a>
+                                                
+                                            </div>
+                                            <!-- Begin Quick View | Modal Area -->
+                                            <div class="modal fade modal-wrapper" id="mymodal" >
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <h3 class="review-page-title">Write Your Review</h3>
+                                                            <div class="modal-inner-area row">
+                                                                <div class="col-lg-6">
+                                                                   <div class="li-review-product">
+                                                                       <img src="{% static 'shop/images/product/large-size/3.jpg' %}" alt="Li's Product">
+                                                                       <div class="li-review-product-desc">
+                                                                           <p class="li-product-name">Today is a good day Framed poster</p>
+                                                                           <p>
+                                                                               <span>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite Sound via Ring Radiator Technology. Stream And Control R3 Speakers Wirelessly With Your Smartphone. Sophisticated, Modern Design </span>
+                                                                           </p>
+                                                                       </div>
+                                                                   </div>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <div class="li-review-content">
+                                                                        <!-- Begin Feedback Area -->
+                                                                        <div class="feedback-area">
+                                                                            <div class="feedback">
+                                                                                <h3 class="feedback-title">Our Feedback</h3>
+                                                                                <form action="#">
+                                                                                    <p class="your-opinion">
+                                                                                        <label>Your Rating</label>
+                                                                                        <span>
+                                                                                            <select class="star-rating">
+                                                                                              <option value="1">1</option>
+                                                                                              <option value="2">2</option>
+                                                                                              <option value="3">3</option>
+                                                                                              <option value="4">4</option>
+                                                                                              <option value="5">5</option>
+                                                                                            </select>
+                                                                                        </span>
+                                                                                    </p>
+                                                                                    <p class="feedback-form">
+                                                                                        <label for="feedback">Your Review</label>
+                                                                                        <textarea id="feedback" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+                                                                                    </p>
+                                                                                    <div class="feedback-input">
+                                                                                        <p class="feedback-form-author">
+                                                                                            <label for="author">Name<span class="required">*</span>
+                                                                                            </label>
+                                                                                            <input id="author" name="author" value="" size="30" aria-required="true" type="text">
+                                                                                        </p>
+                                                                                        <p class="feedback-form-author feedback-form-email">
+                                                                                            <label for="email">Email<span class="required">*</span>
+                                                                                            </label>
+                                                                                            <input id="email" name="email" value="" size="30" aria-required="true" type="text">
+                                                                                            <span class="required"><sub>*</sub> Required fields</span>
+                                                                                        </p>
+                                                                                        <div class="feedback-btn pb-15">
+                                                                                            <a href="#" class="close" data-dismiss="modal" aria-label="Close">Close</a>
+                                                                                            <a href="#">Submit</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- Feedback Area End Here -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                            <!-- Quick View | Modal Area End Here -->
+                                        </div>
+                                    </div>
+                                    </div>
+        </div>
+        </div>
+                        
+                    </div>
+                   
+                </div>
+            </div>
+            <!-- Product Area End Here -->
+            <!-- Begin Li's Laptop Product Area -->
+            <section class="product-area li-laptop-product pt-30 pb-50">
+                <div class="container">
+                    <div class="row">
+                        <!-- Begin Li's Section Area -->
+                        <div class="col-lg-12">
+                            <div class="li-section-title">
+                                <h2>
+                                    <span>Other products in the same category:</span>
+                                </h2>
+                            </div>
+
+                                <div class="owl-carousel owl-init slide-items" id="slide_custom_nav" data-custom-nav="custom-nav-first" data-items="4" data-margin="20" data-dots="true" data-nav="false">
+                                        {% for item in categori %}
+                                    <div class="item-slide">
+                                        <figure class="card card-product">
+                                            <div class="img-wrap"><a href="{{ item.get_absolute_url }}"><img src="{{ item.image.url }}" class="img-fluid" style="height: 250px; width: 290px;"></a>
+                                                <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
+                                            </div>
+
+                                            <figcaption class="info-wrap">
+                                                    <h5 class="title"><a href="{{ item.get_absolute_url }}" class="title">{{ item.title }}</a></h5>
+                                                    <p class="desc"><a href=" {{ item.get_farm_url }}" class="title">{{ item.saler }}</a></p>
+                                                    <div class="rating-wrap">
+                                                        <ul class="rating-stars">
+                                                            <li style="width:50%" class="stars-active"> 
+                                                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+                                                            </li>
+                                                        </ul>
+                                                        <div class="label-rating">132 reviews</div>
+                                                        <div class="label-rating">154 orders </div>
+                                                    </div> <!-- rating-wrap.// -->
+                                            </figcaption>
+                                            <div class="bottom-wrap">
+                                                <a href="{{ item.get_add_to_cart_url }}" class="btn btn-sm btn-primary float-right">Order Now</a> 
+                                                <div class="price-wrap h5">
+                                                    <span class="price-new">UGX{{ item.price }}</span> <del class="price-old">UGX1980</del>
+                                                </div> <!-- price-wrap.// -->
+                                            </div> <!-- bottom-wrap.// -->
+                                        </figure>
+                                    </div> <!-- col // -->
+
+                                    {% endfor %}
+
+</div> <!-- row.// -->
+
+                            
+                        </div>
+                        <!-- Li's Section Area End Here -->
+                    </div>
+                </div>
+            </section>
+            <!-- Li's Laptop Product Area End Here -->
+            <!-- Begin Footer Area -->
+     
+            <!-- Footer Area End Here -->
+            <!-- Begin Quick View | Modal Area -->
+            <div class="modal fade modal-wrapper" id="exampleModalCenter" >
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div class="modal-inner-area row">
+                                <div class="col-lg-5 col-md-6 col-sm-6">
+                                   <!-- Product Details Left -->
+                                    <div class="product-details-left">
+                                        <div class="product-details-images slider-navigation-1">
+                                            <div class="lg-image">
+                                                <img src="{% static 'shop/images/product/large-size/1.jpg' %}" alt="product image">
+                                            </div>
+                                            <div class="lg-image">
+                                                <img src="{% static 'shop/images/product/large-size/2.jpg' %}" alt="product image">
+                                            </div>
+                                            <div class="lg-image">
+                                                <img src="{% static 'shop/images/product/large-size/3.jpg' %}" alt="product image">
+                                            </div>
+                                            <div class="lg-image">
+                                                <img src="{% static 'shop/images/product/large-size/4.jpg' %}" alt="product image">
+                                            </div>
+                                            <div class="lg-image">
+                                                <img src="{% static 'shop/images/product/large-size/5.jpg' %}" alt="product image">
+                                            </div>
+                                            <div class="lg-image">
+                                                <img src="{% static 'shop/images/product/large-size/6.jpg' %}" alt="product image">
+                                            </div>
+                                        </div>
+                                        <div class="product-details-thumbs slider-thumbs-1">                                        
+                                            <div class="sm-image"><img src="{% static 'shop/images/product/small-size/1.jpg' %}" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="{% static 'shop/images/product/small-size/2.jpg' %}" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="{% static 'shop/images/product/small-size/3.jpg' %}" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="{% static 'shop/images/product/small-size/4.jpg' %}" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="{% static 'shop/images/product/small-size/5.jpg' %}" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="{% static 'shop/images/product/small-size/6.jpg' %}" alt="product image thumb"></div>
+                                        </div>
+                                    </div>
+                                    <!--// Product Details Left -->
+                                </div>
+
+                                <div class="col-lg-7 col-md-6 col-sm-6">
+                                    <div class="product-details-view-content pt-60">
+                                        <div class="product-info">
+                                            <h2>Today is a good day Framed poster</h2>
+                                            <span class="product-details-ref">Reference: demo_15</span>
+                                            <div class="rating-box pt-20">
+                                                <ul class="rating rating-with-review-item">
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                    <li class="review-item"><a href="#">Read Review</a></li>
+                                                    
+                                                </ul>
+                                            </div>
+                                            <div class="price-box pt-20">
+                                                <span class="new-price new-price-2">UGX57.98</span>
+                                            </div>
+                                            <div class="product-desc">
+                                                <p>
+                                                    <span>100% cotton double printed dress. Black and white striped top and orange high waisted skater skirt bottom. Lorem ipsum dolor sit amet, consectetur adipisicing elit. quibusdam corporis, earum facilis et nostrum dolorum accusamus similique eveniet quia pariatur.but tttttttttt
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="product-variants">
+                                                <div class="produt-variants-size">
+                                                    <label>Dimension</label>
+                                                    <select class="nice-select">
+                                                        <option value="1" title="S" selected="selected">40x60cm</option>
+                                                        <option value="2" title="M">60x90cm</option>
+                                                        <option value="3" title="L">80x120cm</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="single-add-to-cart">
+                                                <form action="#" class="cart-quantity">
+                                                    <div class="quantity">
+                                                        <label>Quantity</label>
+                                                        <div class="cart-plus-minus">
+                                                            <input class="cart-plus-minus-box" value="1" type="text">
+                                                            <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                                            <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                                        </div>
+                                                    </div>
+                                                    <button class="add-to-cart" type="submit">Add to cart</button>
+                                                </form>
+                                            </div>
+                                    <div class="block-reassurance">
+                                        <ul>
+                                            <li>
+                                                <div class="reassurance-item">
+                                                    <div class="reassurance-icon">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </div>
+                                                    <p>Security policy (edit with Customer reassurance module)</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="reassurance-item">
+                                                    <div class="reassurance-icon">
+                                                        <i class="fa fa-truck"></i>
+                                                    </div>
+                                                    <p>Delivery policy (edit with Customer reassurance module)</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="reassurance-item">
+                                                    <div class="reassurance-icon">
+                                                        <i class="fa fa-exchange"></i>
+                                                    </div>
+                                                    <p> Return policy (edit with Customer reassurance module)</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                            <div class="product-additional-info pt-25">
+                                                
+                                                <div class="product-social-sharing pt-25">
+                                                    <ul>
+                                                        <li class="facebook"><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
+                                                        <li class="twitter"><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
+                                                        <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i>Google +</a></li>
+                                                        
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <!-- Quick View | Modal Area End Here -->
+        </div>
+         </div>
+        <!-- Body Wrapper End Here -->
+
+        
+        {% endblock content %}
+<!-- single-product-normal31:50-->

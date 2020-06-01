@@ -1,0 +1,960 @@
+<div id="buttons-container" class="buttons-container"><div class="paypal-button-container paypal-button-layout-vertical paypal-button-shape-rect paypal-button-number-multiple paypal-button-env-sandbox"><style>
+        
+                                    
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+body {
+    display: inline-block;
+    vertical-align: top;
+    border-collapse: collapse;
+}
+
+* {
+    touch-callout: none;
+    user-select: none;
+    cursor: default;
+}
+
+    
+
+.paypal-button-container {
+    display: block;
+    white-space: nowrap;
+    margin: 0;
+    background: 0;
+    border: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: none;
+    font-weight: 500;
+    font-smoothing: antialiased;
+    z-index: 0;
+    font-size: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.paypal-button {
+    border: 1px solid transparent;
+    border-radius: 0 3px 3px 0;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    vertical-align: top;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.paypal-button.paypal-button-color-transparent {
+    cursor: auto;
+}
+
+.paypal-button * {
+    cursor: pointer;
+}
+
+.paypal-button-container.paypal-button-env-test .paypal-button-text:not(.paypal-button-space) {
+    font-family: Arial !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    color: transparent  !important;
+    text-shadow: none  !important;
+}
+
+.paypal-button-card {
+    cursor: pointer;
+}
+
+.paypal-logo {
+    padding: 0;
+    display: inline-block;
+    background: none;
+    border: none;
+    width: auto;
+}
+
+.paypal-button-text {
+    display: inline-block;
+    white-space: pre-wrap;
+}
+
+.paypal-button > .paypal-logo,
+.paypal-button > .paypal-logo-card,
+.paypal-button > .paypal-button-text {
+    vertical-align: top;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+}
+
+.paypal-button-tagline {
+    max-width: 100%;
+    font-weight: normal;
+    display: block;
+    text-align: center;
+    width: auto;
+}
+
+.paypal-button .paypal-button-spinner {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    box-sizing: border-box;
+    border: 3px solid rgba(0, 0, 0, .2);
+    border-top-color: rgba(33, 128, 192, 0.8);
+    border-radius: 100%;
+    animation: paypal-button-spinner-rotation .7s infinite linear;
+}
+
+@keyframes paypal-button-spinner-rotation {
+    from {
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+    to {
+        transform: translateX(-50%) translateY(-50%) rotate(359deg);
+    }
+}
+
+.paypal-button .paypal-button-spinner {
+    display: none !important;
+}
+
+.paypal-button.paypal-button-loading * {
+    display: none !important;
+}
+
+.paypal-button.paypal-button-loading .paypal-button-spinner {
+    display: block !important;
+}
+
+.paypal-button-container .paypal-vault-header {
+    margin-top: 10px;
+}
+
+.paypal-powered-by > .paypal-button-text {
+    vertical-align: top;
+    line-height: 18px;
+}
+
+.paypal-powered-by > .paypal-logo {
+    height: 16px;
+    min-height: 16px;
+}
+
+    
+
+.paypal-button.paypal-button-color-gold {
+    background: #ffc439;
+    color: #111;
+}
+
+.paypal-button.paypal-button-color-gold:hover {
+    filter: brightness(0.95);
+}
+
+.paypal-button.paypal-button-color-gold:focus {
+    outline: none;
+    box-shadow: 0px 0px 1px 3px #0c67ff inset;
+}
+
+
+
+
+.paypal-button.paypal-button-color-blue {
+    background: #009cde;
+    color: #fff;
+}
+
+.paypal-button.paypal-button-color-blue:hover {
+    filter: brightness(0.95);
+}
+
+.paypal-button.paypal-button-color-blue:focus {
+    outline: none;
+    box-shadow: 0px 0px 1px 3px #0c67ff inset;
+}
+
+
+
+.paypal-button.paypal-button-color-silver {
+    background: #eee;
+    color: #111;
+}
+
+.paypal-button.paypal-button-color-silver:hover {
+    filter: brightness(0.95);
+}
+
+.paypal-button.paypal-button-color-silver:focus {
+    outline: none;
+    box-shadow: 0px 0px 1px 3px #0c67ff inset;
+}
+
+
+
+.paypal-button.paypal-button-color-darkblue {
+    background: #003087;
+    color: #fff;
+}
+
+.paypal-button.paypal-button-color-darkblue:hover {
+    filter: brightness(1.2);
+}
+
+.paypal-button.paypal-button-color-darkblue:focus {
+    outline: none;
+    box-shadow: 0px 0px 1px 3px #0c67ff inset;
+}
+
+
+
+.paypal-button.paypal-button-color-black {
+    background: #2C2E2F;
+    color: #fff;
+}
+
+.paypal-button.paypal-button-color-black:hover {
+    filter: brightness(1.2);
+}
+
+.paypal-button.paypal-button-color-black:focus {
+    outline: none;
+    box-shadow: 0px 0px 1px 3px #0c67ff inset;
+}
+
+
+
+.paypal-button.paypal-button-color-white {
+    background: #fff;
+    color: #2C2E2F;
+    border: 1px solid #2C2E2F;
+}
+
+.paypal-button.paypal-button-color-white:hover {
+    filter: brightness(0.95);
+}
+
+.paypal-button.paypal-button-color-white:focus {
+    outline: none;
+    box-shadow: 0px 0px 1px 3px #0c67ff inset;
+}
+
+
+
+.paypal-button.paypal-button-color-transparent {
+    background: transparent;
+    color: #111;
+}
+
+
+
+.paypal-button .paypal-button-card {
+    position: relative;
+}
+
+.paypal-button .paypal-button-card::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.paypal-button .paypal-button-card:hover {
+    filter: brightness(1.2);
+}
+
+.paypal-button .paypal-button-card:focus {
+    outline: none;
+}
+
+.paypal-button .paypal-button-card:focus::after {
+    box-shadow: 0px 0px 1px 3px #0c67ff inset;
+}
+
+    
+
+.paypal-button[data-funding-source=card]:not(.paypal-button-vault) {
+    border-radius: 0 !important;
+}
+
+.paypal-button .paypal-vault-label {
+    max-width: 60%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+    
+
+        @media only screen and (min-width: 75px) {
+
+            .paypal-button-container {
+                min-width: 75px;
+                max-width: 150px;
+                font-size: 10px;
+            }
+
+            .paypal-button {
+                height: 25px;
+                min-height: 25px;
+                max-height: 30px;
+            }
+
+            .paypal-button .paypal-button-spinner {
+                height: 13px;
+                width: 13px;
+            }
+
+            .paypal-button > .paypal-logo,
+            .paypal-button > .paypal-logo-card {
+                height: 14px;
+                max-height: 15px;
+                min-height: 10px;
+            }
+            
+            .paypal-button[data-funding-source=eps] .paypal-logo,
+            .paypal-button[data-funding-source=mybank] .paypal-logo {
+                height: 18px;
+                max-height: 18px;
+                min-height: 10px;
+            }
+
+            .paypal-button.paypal-button-shape-rect {
+                border-radius: 4px;
+            }
+
+            .paypal-button.paypal-button-shape-pill {
+                border-radius: 13px;
+            }
+
+            .paypal-button.paypal-button-layout-vertical {
+                margin-bottom: 8px;
+            }
+
+            .paypal-button.paypal-button-layout-vertical:last-of-type {
+                margin-bottom: 0;
+            }
+            
+            .paypal-button-tagline {
+                height: 13px;
+                line-height: 13px;
+            }
+
+            .paypal-button-card {
+                display: inline-block;
+            }
+
+            .paypal-button .paypal-button-card {
+                width: 22.50%;
+                max-width: 40px;
+                margin-top: 0;
+                margin-left: 1.25%;
+                margin-right: 1.25%;
+            }
+
+            .paypal-button .paypal-button-card img {
+                width: 100%;
+            }
+
+            .menu-toggle {
+                position: absolute;
+                height: 100%;
+                right: 0;
+                top: 0;
+                width: 25px;
+                border-left: 1px solid rgba(100, 100, 100, 0.1);
+            }
+
+            .menu-toggle:hover {
+                background: rgba(100, 100, 100, 0.1);
+            }
+
+            .menu-toggle img {
+                width: 30%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+
+        @media only screen and (min-width: 75px) and (max-width: 140px) {
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-0 {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-1 {
+                display: none;
+            }
+
+            .paypal-button-container.paypal-button-layout-horizontal.paypal-button-number-multiple .paypal-button-tagline {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width: 140px) {
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-0 {
+                display: inline-block;
+                width: calc(50% - 2px);
+                margin-right: 4px;
+            }
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-1 {
+                display: inline-block;
+                width: calc(50% - 2px);
+            }
+
+            .paypal-button-container.paypal-button-layout-horizontal.paypal-button-number-multiple .paypal-button-tagline {
+                display: block;
+            }
+        }
+    
+
+
+        @media only screen and (min-width: 150px) {
+
+            .paypal-button-container {
+                min-width: 150px;
+                max-width: 200px;
+                font-size: 10px;
+            }
+
+            .paypal-button {
+                height: 25px;
+                min-height: 25px;
+                max-height: 55px;
+            }
+
+            .paypal-button .paypal-button-spinner {
+                height: 13px;
+                width: 13px;
+            }
+
+            .paypal-button > .paypal-logo,
+            .paypal-button > .paypal-logo-card {
+                height: 14px;
+                max-height: 15px;
+                min-height: 10px;
+            }
+            
+            .paypal-button[data-funding-source=eps] .paypal-logo,
+            .paypal-button[data-funding-source=mybank] .paypal-logo {
+                height: 18px;
+                max-height: 18px;
+                min-height: 10px;
+            }
+
+            .paypal-button.paypal-button-shape-rect {
+                border-radius: 4px;
+            }
+
+            .paypal-button.paypal-button-shape-pill {
+                border-radius: 13px;
+            }
+
+            .paypal-button.paypal-button-layout-vertical {
+                margin-bottom: 8px;
+            }
+
+            .paypal-button.paypal-button-layout-vertical:last-of-type {
+                margin-bottom: 0;
+            }
+            
+            .paypal-button-tagline {
+                height: 13px;
+                line-height: 13px;
+            }
+
+            .paypal-button-card {
+                display: inline-block;
+            }
+
+            .paypal-button .paypal-button-card {
+                width: 22.50%;
+                max-width: 40px;
+                margin-top: 0;
+                margin-left: 1.25%;
+                margin-right: 1.25%;
+            }
+
+            .paypal-button .paypal-button-card img {
+                width: 100%;
+            }
+
+            .menu-toggle {
+                position: absolute;
+                height: 100%;
+                right: 0;
+                top: 0;
+                width: 25px;
+                border-left: 1px solid rgba(100, 100, 100, 0.1);
+            }
+
+            .menu-toggle:hover {
+                background: rgba(100, 100, 100, 0.1);
+            }
+
+            .menu-toggle img {
+                width: 30%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+
+        @media only screen and (min-width: 150px) and (max-width: 140px) {
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-0 {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-1 {
+                display: none;
+            }
+
+            .paypal-button-container.paypal-button-layout-horizontal.paypal-button-number-multiple .paypal-button-tagline {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width: 150px) {
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-0 {
+                display: inline-block;
+                width: calc(50% - 2px);
+                margin-right: 4px;
+            }
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-1 {
+                display: inline-block;
+                width: calc(50% - 2px);
+            }
+
+            .paypal-button-container.paypal-button-layout-horizontal.paypal-button-number-multiple .paypal-button-tagline {
+                display: block;
+            }
+        }
+    
+
+
+        @media only screen and (min-width: 200px) {
+
+            .paypal-button-container {
+                min-width: 200px;
+                max-width: 300px;
+                font-size: 11px;
+            }
+
+            .paypal-button {
+                height: 35px;
+                min-height: 35px;
+                max-height: 55px;
+            }
+
+            .paypal-button .paypal-button-spinner {
+                height: 18px;
+                width: 18px;
+            }
+
+            .paypal-button > .paypal-logo,
+            .paypal-button > .paypal-logo-card {
+                height: 17px;
+                max-height: 21px;
+                min-height: 14px;
+            }
+            
+            .paypal-button[data-funding-source=eps] .paypal-logo,
+            .paypal-button[data-funding-source=mybank] .paypal-logo {
+                height: 23px;
+                max-height: 25px;
+                min-height: 14px;
+            }
+
+            .paypal-button.paypal-button-shape-rect {
+                border-radius: 4px;
+            }
+
+            .paypal-button.paypal-button-shape-pill {
+                border-radius: 18px;
+            }
+
+            .paypal-button.paypal-button-layout-vertical {
+                margin-bottom: 11px;
+            }
+
+            .paypal-button.paypal-button-layout-vertical:last-of-type {
+                margin-bottom: 0;
+            }
+            
+            .paypal-button-tagline {
+                height: 18px;
+                line-height: 18px;
+            }
+
+            .paypal-button-card {
+                display: inline-block;
+            }
+
+            .paypal-button .paypal-button-card {
+                width: 22.50%;
+                max-width: 56px;
+                margin-top: 0;
+                margin-left: 1.25%;
+                margin-right: 1.25%;
+            }
+
+            .paypal-button .paypal-button-card img {
+                width: 100%;
+            }
+
+            .menu-toggle {
+                position: absolute;
+                height: 100%;
+                right: 0;
+                top: 0;
+                width: 35px;
+                border-left: 1px solid rgba(100, 100, 100, 0.1);
+            }
+
+            .menu-toggle:hover {
+                background: rgba(100, 100, 100, 0.1);
+            }
+
+            .menu-toggle img {
+                width: 30%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+
+        @media only screen and (min-width: 200px) and (max-width: 196px) {
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-0 {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-1 {
+                display: none;
+            }
+
+            .paypal-button-container.paypal-button-layout-horizontal.paypal-button-number-multiple .paypal-button-tagline {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width: 200px) {
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-0 {
+                display: inline-block;
+                width: calc(50% - 2px);
+                margin-right: 4px;
+            }
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-1 {
+                display: inline-block;
+                width: calc(50% - 2px);
+            }
+
+            .paypal-button-container.paypal-button-layout-horizontal.paypal-button-number-multiple .paypal-button-tagline {
+                display: block;
+            }
+        }
+    
+
+
+        @media only screen and (min-width: 300px) {
+
+            .paypal-button-container {
+                min-width: 300px;
+                max-width: 500px;
+                font-size: 14px;
+            }
+
+            .paypal-button {
+                height: 45px;
+                min-height: 30px;
+                max-height: 55px;
+            }
+
+            .paypal-button .paypal-button-spinner {
+                height: 23px;
+                width: 23px;
+            }
+
+            .paypal-button > .paypal-logo,
+            .paypal-button > .paypal-logo-card {
+                height: 21px;
+                max-height: 27px;
+                min-height: 18px;
+            }
+            
+            .paypal-button[data-funding-source=eps] .paypal-logo,
+            .paypal-button[data-funding-source=mybank] .paypal-logo {
+                height: 28px;
+                max-height: 32px;
+                min-height: 18px;
+            }
+
+            .paypal-button.paypal-button-shape-rect {
+                border-radius: 4px;
+            }
+
+            .paypal-button.paypal-button-shape-pill {
+                border-radius: 23px;
+            }
+
+            .paypal-button.paypal-button-layout-vertical {
+                margin-bottom: 14px;
+            }
+
+            .paypal-button.paypal-button-layout-vertical:last-of-type {
+                margin-bottom: 0;
+            }
+            
+            .paypal-button-tagline {
+                height: 23px;
+                line-height: 23px;
+            }
+
+            .paypal-button-card {
+                display: inline-block;
+            }
+
+            .paypal-button .paypal-button-card {
+                width: 22.50%;
+                max-width: 72px;
+                margin-top: 0;
+                margin-left: 1.25%;
+                margin-right: 1.25%;
+            }
+
+            .paypal-button .paypal-button-card img {
+                width: 100%;
+            }
+
+            .menu-toggle {
+                position: absolute;
+                height: 100%;
+                right: 0;
+                top: 0;
+                width: 45px;
+                border-left: 1px solid rgba(100, 100, 100, 0.1);
+            }
+
+            .menu-toggle:hover {
+                background: rgba(100, 100, 100, 0.1);
+            }
+
+            .menu-toggle img {
+                width: 30%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+
+        @media only screen and (min-width: 300px) and (max-width: 252px) {
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-0 {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-1 {
+                display: none;
+            }
+
+            .paypal-button-container.paypal-button-layout-horizontal.paypal-button-number-multiple .paypal-button-tagline {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width: 300px) {
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-0 {
+                display: inline-block;
+                width: calc(50% - 2px);
+                margin-right: 4px;
+            }
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-1 {
+                display: inline-block;
+                width: calc(50% - 2px);
+            }
+
+            .paypal-button-container.paypal-button-layout-horizontal.paypal-button-number-multiple .paypal-button-tagline {
+                display: block;
+            }
+        }
+    
+
+
+        @media only screen and (min-width: 500px) {
+
+            .paypal-button-container {
+                min-width: 500px;
+                max-width: 750px;
+                font-size: 18px;
+            }
+
+            .paypal-button {
+                height: 55px;
+                min-height: 40px;
+                max-height: 55px;
+            }
+
+            .paypal-button .paypal-button-spinner {
+                height: 28px;
+                width: 28px;
+            }
+
+            .paypal-button > .paypal-logo,
+            .paypal-button > .paypal-logo-card {
+                height: 24px;
+                max-height: 33px;
+                min-height: 22px;
+            }
+            
+            .paypal-button[data-funding-source=eps] .paypal-logo,
+            .paypal-button[data-funding-source=mybank] .paypal-logo {
+                height: 33px;
+                max-height: 39px;
+                min-height: 22px;
+            }
+
+            .paypal-button.paypal-button-shape-rect {
+                border-radius: 4px;
+            }
+
+            .paypal-button.paypal-button-shape-pill {
+                border-radius: 28px;
+            }
+
+            .paypal-button.paypal-button-layout-vertical {
+                margin-bottom: 17px;
+            }
+
+            .paypal-button.paypal-button-layout-vertical:last-of-type {
+                margin-bottom: 0;
+            }
+            
+            .paypal-button-tagline {
+                height: 28px;
+                line-height: 28px;
+            }
+
+            .paypal-button-card {
+                display: inline-block;
+            }
+
+            .paypal-button .paypal-button-card {
+                width: 22.50%;
+                max-width: 88px;
+                margin-top: 0;
+                margin-left: 1.25%;
+                margin-right: 1.25%;
+            }
+
+            .paypal-button .paypal-button-card img {
+                width: 100%;
+            }
+
+            .menu-toggle {
+                position: absolute;
+                height: 100%;
+                right: 0;
+                top: 0;
+                width: 55px;
+                border-left: 1px solid rgba(100, 100, 100, 0.1);
+            }
+
+            .menu-toggle:hover {
+                background: rgba(100, 100, 100, 0.1);
+            }
+
+            .menu-toggle img {
+                width: 30%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+
+        @media only screen and (min-width: 500px) and (max-width: 308px) {
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-0 {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-1 {
+                display: none;
+            }
+
+            .paypal-button-container.paypal-button-layout-horizontal.paypal-button-number-multiple .paypal-button-tagline {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width: 500px) {
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-0 {
+                display: inline-block;
+                width: calc(50% - 2px);
+                margin-right: 4px;
+            }
+
+            .paypal-button.paypal-button-layout-horizontal.paypal-button-number-multiple.paypal-button-number-1 {
+                display: inline-block;
+                width: calc(50% - 2px);
+            }
+
+            .paypal-button-container.paypal-button-layout-horizontal.paypal-button-number-multiple .paypal-button-tagline {
+                display: block;
+            }
+        }
+    
+</style><div role="button" data-button="" data-funding-source="paypal" class="paypal-button paypal-button-number-0 paypal-button-layout-vertical paypal-button-shape-rect paypal-button-number-multiple paypal-button-env-sandbox paypal-button-color-gold paypal-logo-color-blue paypal-button-clicked" aria-label="paypal" tabindex="0"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAyNCAzMiIgeG1sbnM9Imh0dHA6JiN4MkY7JiN4MkY7d3d3LnczLm9yZyYjeDJGOzIwMDAmI3gyRjtzdmciIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIG1lZXQiPjxwYXRoIGZpbGw9IiMwMDljZGUiIGQ9Ik0gMjAuOTA1IDkuNSBDIDIxLjE4NSA3LjQgMjAuOTA1IDYgMTkuNzgyIDQuNyBDIDE4LjU2NCAzLjMgMTYuNDExIDIuNiAxMy42OTcgMi42IEwgNS43MzkgMi42IEMgNS4yNzEgMi42IDQuNzEgMy4xIDQuNjE1IDMuNiBMIDEuMzM5IDI1LjggQyAxLjMzOSAyNi4yIDEuNjIgMjYuNyAyLjA4OCAyNi43IEwgNi45NTYgMjYuNyBMIDYuNjc1IDI4LjkgQyA2LjU4MSAyOS4zIDYuODYyIDI5LjYgNy4yMzYgMjkuNiBMIDExLjM1NiAyOS42IEMgMTEuODI1IDI5LjYgMTIuMjkyIDI5LjMgMTIuMzg2IDI4LjggTCAxMi4zODYgMjguNSBMIDEzLjIyOCAyMy4zIEwgMTMuMjI4IDIzLjEgQyAxMy4zMjIgMjIuNiAxMy43OSAyMi4yIDE0LjI1OCAyMi4yIEwgMTQuODIxIDIyLjIgQyAxOC44NDUgMjIuMiAyMS45MzUgMjAuNSAyMi44NzEgMTUuNSBDIDIzLjMzOSAxMy40IDIzLjE1MyAxMS43IDIyLjAyOSAxMC41IEMgMjEuNzQ4IDEwLjEgMjEuMjc5IDkuOCAyMC45MDUgOS41IEwgMjAuOTA1IDkuNSI+PC9wYXRoPjxwYXRoIGZpbGw9IiMwMTIxNjkiIGQ9Ik0gMjAuOTA1IDkuNSBDIDIxLjE4NSA3LjQgMjAuOTA1IDYgMTkuNzgyIDQuNyBDIDE4LjU2NCAzLjMgMTYuNDExIDIuNiAxMy42OTcgMi42IEwgNS43MzkgMi42IEMgNS4yNzEgMi42IDQuNzEgMy4xIDQuNjE1IDMuNiBMIDEuMzM5IDI1LjggQyAxLjMzOSAyNi4yIDEuNjIgMjYuNyAyLjA4OCAyNi43IEwgNi45NTYgMjYuNyBMIDguMjY3IDE4LjQgTCA4LjE3MyAxOC43IEMgOC4yNjcgMTguMSA4LjczNSAxNy43IDkuMjk2IDE3LjcgTCAxMS42MzYgMTcuNyBDIDE2LjIyNCAxNy43IDE5Ljc4MiAxNS43IDIwLjkwNSAxMC4xIEMgMjAuODEyIDkuOCAyMC45MDUgOS43IDIwLjkwNSA5LjUiPjwvcGF0aD48cGF0aCBmaWxsPSIjMDAzMDg3IiBkPSJNIDkuNDg1IDkuNSBDIDkuNTc3IDkuMiA5Ljc2NSA4LjkgMTAuMDQ2IDguNyBDIDEwLjIzMiA4LjcgMTAuMzI2IDguNiAxMC41MTMgOC42IEwgMTYuNjkyIDguNiBDIDE3LjQ0MiA4LjYgMTguMTg5IDguNyAxOC43NTMgOC44IEMgMTguOTM5IDguOCAxOS4xMjcgOC44IDE5LjMxNCA4LjkgQyAxOS41MDEgOSAxOS42ODggOSAxOS43ODIgOS4xIEMgMTkuODc1IDkuMSAxOS45NjggOS4xIDIwLjA2MyA5LjEgQyAyMC4zNDMgOS4yIDIwLjYyNCA5LjQgMjAuOTA1IDkuNSBDIDIxLjE4NSA3LjQgMjAuOTA1IDYgMTkuNzgyIDQuNiBDIDE4LjY1OCAzLjIgMTYuNTA2IDIuNiAxMy43OSAyLjYgTCA1LjczOSAyLjYgQyA1LjI3MSAyLjYgNC43MSAzIDQuNjE1IDMuNiBMIDEuMzM5IDI1LjggQyAxLjMzOSAyNi4yIDEuNjIgMjYuNyAyLjA4OCAyNi43IEwgNi45NTYgMjYuNyBMIDguMjY3IDE4LjQgTCA5LjQ4NSA5LjUgWiI+PC9wYXRoPjwvc3ZnPg==" alt="PP" class="paypal-logo paypal-logo-pp paypal-logo-color-blue" style="visibility: visible;"><span class="paypal-button-text paypal-button-space"> </span><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjMyIiB2aWV3Qm94PSIwIDAgMTAwIDMyIiB4bWxucz0iaHR0cDomI3gyRjsmI3gyRjt3d3cudzMub3JnJiN4MkY7MjAwMCYjeDJGO3N2ZyIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pbllNaW4gbWVldCI+PHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSAxMiA0LjkxNyBMIDQuMiA0LjkxNyBDIDMuNyA0LjkxNyAzLjIgNS4zMTcgMy4xIDUuODE3IEwgMCAyNS44MTcgQyAtMC4xIDI2LjIxNyAwLjIgMjYuNTE3IDAuNiAyNi41MTcgTCA0LjMgMjYuNTE3IEMgNC44IDI2LjUxNyA1LjMgMjYuMTE3IDUuNCAyNS42MTcgTCA2LjIgMjAuMjE3IEMgNi4zIDE5LjcxNyA2LjcgMTkuMzE3IDcuMyAxOS4zMTcgTCA5LjggMTkuMzE3IEMgMTQuOSAxOS4zMTcgMTcuOSAxNi44MTcgMTguNyAxMS45MTcgQyAxOSA5LjgxNyAxOC43IDguMTE3IDE3LjcgNi45MTcgQyAxNi42IDUuNjE3IDE0LjYgNC45MTcgMTIgNC45MTcgWiBNIDEyLjkgMTIuMjE3IEMgMTIuNSAxNS4wMTcgMTAuMyAxNS4wMTcgOC4zIDE1LjAxNyBMIDcuMSAxNS4wMTcgTCA3LjkgOS44MTcgQyA3LjkgOS41MTcgOC4yIDkuMzE3IDguNSA5LjMxNyBMIDkgOS4zMTcgQyAxMC40IDkuMzE3IDExLjcgOS4zMTcgMTIuNCAxMC4xMTcgQyAxMi45IDEwLjUxNyAxMy4xIDExLjIxNyAxMi45IDEyLjIxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSAzNS4yIDEyLjExNyBMIDMxLjUgMTIuMTE3IEMgMzEuMiAxMi4xMTcgMzAuOSAxMi4zMTcgMzAuOSAxMi42MTcgTCAzMC43IDEzLjYxNyBMIDMwLjQgMTMuMjE3IEMgMjkuNiAxMi4wMTcgMjcuOCAxMS42MTcgMjYgMTEuNjE3IEMgMjEuOSAxMS42MTcgMTguNCAxNC43MTcgMTcuNyAxOS4xMTcgQyAxNy4zIDIxLjMxNyAxNy44IDIzLjQxNyAxOS4xIDI0LjgxNyBDIDIwLjIgMjYuMTE3IDIxLjkgMjYuNzE3IDIzLjggMjYuNzE3IEMgMjcuMSAyNi43MTcgMjkgMjQuNjE3IDI5IDI0LjYxNyBMIDI4LjggMjUuNjE3IEMgMjguNyAyNi4wMTcgMjkgMjYuNDE3IDI5LjQgMjYuNDE3IEwgMzIuOCAyNi40MTcgQyAzMy4zIDI2LjQxNyAzMy44IDI2LjAxNyAzMy45IDI1LjUxNyBMIDM1LjkgMTIuNzE3IEMgMzYgMTIuNTE3IDM1LjYgMTIuMTE3IDM1LjIgMTIuMTE3IFogTSAzMC4xIDE5LjMxNyBDIDI5LjcgMjEuNDE3IDI4LjEgMjIuOTE3IDI1LjkgMjIuOTE3IEMgMjQuOCAyMi45MTcgMjQgMjIuNjE3IDIzLjQgMjEuOTE3IEMgMjIuOCAyMS4yMTcgMjIuNiAyMC4zMTcgMjIuOCAxOS4zMTcgQyAyMy4xIDE3LjIxNyAyNC45IDE1LjcxNyAyNyAxNS43MTcgQyAyOC4xIDE1LjcxNyAyOC45IDE2LjExNyAyOS41IDE2LjcxNyBDIDMwIDE3LjQxNyAzMC4yIDE4LjMxNyAzMC4xIDE5LjMxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSA1NS4xIDEyLjExNyBMIDUxLjQgMTIuMTE3IEMgNTEgMTIuMTE3IDUwLjcgMTIuMzE3IDUwLjUgMTIuNjE3IEwgNDUuMyAyMC4yMTcgTCA0My4xIDEyLjkxNyBDIDQzIDEyLjQxNyA0Mi41IDEyLjExNyA0Mi4xIDEyLjExNyBMIDM4LjQgMTIuMTE3IEMgMzggMTIuMTE3IDM3LjYgMTIuNTE3IDM3LjggMTMuMDE3IEwgNDEuOSAyNS4xMTcgTCAzOCAzMC41MTcgQyAzNy43IDMwLjkxNyAzOCAzMS41MTcgMzguNSAzMS41MTcgTCA0Mi4yIDMxLjUxNyBDIDQyLjYgMzEuNTE3IDQyLjkgMzEuMzE3IDQzLjEgMzEuMDE3IEwgNTUuNiAxMy4wMTcgQyA1NS45IDEyLjcxNyA1NS42IDEyLjExNyA1NS4xIDEyLjExNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA2Ny41IDQuOTE3IEwgNTkuNyA0LjkxNyBDIDU5LjIgNC45MTcgNTguNyA1LjMxNyA1OC42IDUuODE3IEwgNTUuNSAyNS43MTcgQyA1NS40IDI2LjExNyA1NS43IDI2LjQxNyA1Ni4xIDI2LjQxNyBMIDYwLjEgMjYuNDE3IEMgNjAuNSAyNi40MTcgNjAuOCAyNi4xMTcgNjAuOCAyNS44MTcgTCA2MS43IDIwLjExNyBDIDYxLjggMTkuNjE3IDYyLjIgMTkuMjE3IDYyLjggMTkuMjE3IEwgNjUuMyAxOS4yMTcgQyA3MC40IDE5LjIxNyA3My40IDE2LjcxNyA3NC4yIDExLjgxNyBDIDc0LjUgOS43MTcgNzQuMiA4LjAxNyA3My4yIDYuODE3IEMgNzIgNS42MTcgNzAuMSA0LjkxNyA2Ny41IDQuOTE3IFogTSA2OC40IDEyLjIxNyBDIDY4IDE1LjAxNyA2NS44IDE1LjAxNyA2My44IDE1LjAxNyBMIDYyLjYgMTUuMDE3IEwgNjMuNCA5LjgxNyBDIDYzLjQgOS41MTcgNjMuNyA5LjMxNyA2NCA5LjMxNyBMIDY0LjUgOS4zMTcgQyA2NS45IDkuMzE3IDY3LjIgOS4zMTcgNjcuOSAxMC4xMTcgQyA2OC40IDEwLjUxNyA2OC41IDExLjIxNyA2OC40IDEyLjIxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA5MC43IDEyLjExNyBMIDg3IDEyLjExNyBDIDg2LjcgMTIuMTE3IDg2LjQgMTIuMzE3IDg2LjQgMTIuNjE3IEwgODYuMiAxMy42MTcgTCA4NS45IDEzLjIxNyBDIDg1LjEgMTIuMDE3IDgzLjMgMTEuNjE3IDgxLjUgMTEuNjE3IEMgNzcuNCAxMS42MTcgNzMuOSAxNC43MTcgNzMuMiAxOS4xMTcgQyA3Mi44IDIxLjMxNyA3My4zIDIzLjQxNyA3NC42IDI0LjgxNyBDIDc1LjcgMjYuMTE3IDc3LjQgMjYuNzE3IDc5LjMgMjYuNzE3IEMgODIuNiAyNi43MTcgODQuNSAyNC42MTcgODQuNSAyNC42MTcgTCA4NC4zIDI1LjYxNyBDIDg0LjIgMjYuMDE3IDg0LjUgMjYuNDE3IDg0LjkgMjYuNDE3IEwgODguMyAyNi40MTcgQyA4OC44IDI2LjQxNyA4OS4zIDI2LjAxNyA4OS40IDI1LjUxNyBMIDkxLjQgMTIuNzE3IEMgOTEuNCAxMi41MTcgOTEuMSAxMi4xMTcgOTAuNyAxMi4xMTcgWiBNIDg1LjUgMTkuMzE3IEMgODUuMSAyMS40MTcgODMuNSAyMi45MTcgODEuMyAyMi45MTcgQyA4MC4yIDIyLjkxNyA3OS40IDIyLjYxNyA3OC44IDIxLjkxNyBDIDc4LjIgMjEuMjE3IDc4IDIwLjMxNyA3OC4yIDE5LjMxNyBDIDc4LjUgMTcuMjE3IDgwLjMgMTUuNzE3IDgyLjQgMTUuNzE3IEMgODMuNSAxNS43MTcgODQuMyAxNi4xMTcgODQuOSAxNi43MTcgQyA4NS41IDE3LjQxNyA4NS43IDE4LjMxNyA4NS41IDE5LjMxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA5NS4xIDUuNDE3IEwgOTEuOSAyNS43MTcgQyA5MS44IDI2LjExNyA5Mi4xIDI2LjQxNyA5Mi41IDI2LjQxNyBMIDk1LjcgMjYuNDE3IEMgOTYuMiAyNi40MTcgOTYuNyAyNi4wMTcgOTYuOCAyNS41MTcgTCAxMDAgNS42MTcgQyAxMDAuMSA1LjIxNyA5OS44IDQuOTE3IDk5LjQgNC45MTcgTCA5NS44IDQuOTE3IEMgOTUuNCA0LjkxNyA5NS4yIDUuMTE3IDk1LjEgNS40MTcgWiI+PC9wYXRoPjwvc3ZnPg==" alt="PayPal" class="paypal-logo paypal-logo-paypal paypal-logo-color-blue" style="visibility: visible;"><div class="paypal-button-spinner"></div></div><div role="button" data-button="" data-funding-source="card" class="paypal-button paypal-button-number-1 paypal-button-layout-vertical paypal-button-shape-rect paypal-button-number-multiple paypal-button-env-sandbox paypal-button-color-transparent paypal-logo-color-default" aria-label="card" tabindex="-1"><div><style>
+                            #black-credit-card-button {
+                                background: #000;
+                                color: #fff;
+                                font-size: 1.15em;
+                                border-radius: 4px !important;
+                            }
+                        </style><button type="button" id="black-credit-card-button" class="paypal-button" data-funding-source="card">Debit or Credit Card</button></div><div class="paypal-button-spinner"></div></div><div class="paypal-powered-by"><style>
+.paypal-powered-by {
+    text-align: center;
+    margin: 10px auto;
+    height: 14px;
+    font-family: PayPal-Sans, HelveticaNeue, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    font-style: italic;
+    font-stretch: normal;
+    color: #7b8388;
+    position: relative;
+    margin-right: 3px;
+    bottom: 3px;
+}
+</style><span class="paypal-button-text">Powered by </span><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjMyIiB2aWV3Qm94PSIwIDAgMTAwIDMyIiB4bWxucz0iaHR0cDomI3gyRjsmI3gyRjt3d3cudzMub3JnJiN4MkY7MjAwMCYjeDJGO3N2ZyIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pbllNaW4gbWVldCI+PHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSAxMiA0LjkxNyBMIDQuMiA0LjkxNyBDIDMuNyA0LjkxNyAzLjIgNS4zMTcgMy4xIDUuODE3IEwgMCAyNS44MTcgQyAtMC4xIDI2LjIxNyAwLjIgMjYuNTE3IDAuNiAyNi41MTcgTCA0LjMgMjYuNTE3IEMgNC44IDI2LjUxNyA1LjMgMjYuMTE3IDUuNCAyNS42MTcgTCA2LjIgMjAuMjE3IEMgNi4zIDE5LjcxNyA2LjcgMTkuMzE3IDcuMyAxOS4zMTcgTCA5LjggMTkuMzE3IEMgMTQuOSAxOS4zMTcgMTcuOSAxNi44MTcgMTguNyAxMS45MTcgQyAxOSA5LjgxNyAxOC43IDguMTE3IDE3LjcgNi45MTcgQyAxNi42IDUuNjE3IDE0LjYgNC45MTcgMTIgNC45MTcgWiBNIDEyLjkgMTIuMjE3IEMgMTIuNSAxNS4wMTcgMTAuMyAxNS4wMTcgOC4zIDE1LjAxNyBMIDcuMSAxNS4wMTcgTCA3LjkgOS44MTcgQyA3LjkgOS41MTcgOC4yIDkuMzE3IDguNSA5LjMxNyBMIDkgOS4zMTcgQyAxMC40IDkuMzE3IDExLjcgOS4zMTcgMTIuNCAxMC4xMTcgQyAxMi45IDEwLjUxNyAxMy4xIDExLjIxNyAxMi45IDEyLjIxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSAzNS4yIDEyLjExNyBMIDMxLjUgMTIuMTE3IEMgMzEuMiAxMi4xMTcgMzAuOSAxMi4zMTcgMzAuOSAxMi42MTcgTCAzMC43IDEzLjYxNyBMIDMwLjQgMTMuMjE3IEMgMjkuNiAxMi4wMTcgMjcuOCAxMS42MTcgMjYgMTEuNjE3IEMgMjEuOSAxMS42MTcgMTguNCAxNC43MTcgMTcuNyAxOS4xMTcgQyAxNy4zIDIxLjMxNyAxNy44IDIzLjQxNyAxOS4xIDI0LjgxNyBDIDIwLjIgMjYuMTE3IDIxLjkgMjYuNzE3IDIzLjggMjYuNzE3IEMgMjcuMSAyNi43MTcgMjkgMjQuNjE3IDI5IDI0LjYxNyBMIDI4LjggMjUuNjE3IEMgMjguNyAyNi4wMTcgMjkgMjYuNDE3IDI5LjQgMjYuNDE3IEwgMzIuOCAyNi40MTcgQyAzMy4zIDI2LjQxNyAzMy44IDI2LjAxNyAzMy45IDI1LjUxNyBMIDM1LjkgMTIuNzE3IEMgMzYgMTIuNTE3IDM1LjYgMTIuMTE3IDM1LjIgMTIuMTE3IFogTSAzMC4xIDE5LjMxNyBDIDI5LjcgMjEuNDE3IDI4LjEgMjIuOTE3IDI1LjkgMjIuOTE3IEMgMjQuOCAyMi45MTcgMjQgMjIuNjE3IDIzLjQgMjEuOTE3IEMgMjIuOCAyMS4yMTcgMjIuNiAyMC4zMTcgMjIuOCAxOS4zMTcgQyAyMy4xIDE3LjIxNyAyNC45IDE1LjcxNyAyNyAxNS43MTcgQyAyOC4xIDE1LjcxNyAyOC45IDE2LjExNyAyOS41IDE2LjcxNyBDIDMwIDE3LjQxNyAzMC4yIDE4LjMxNyAzMC4xIDE5LjMxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSA1NS4xIDEyLjExNyBMIDUxLjQgMTIuMTE3IEMgNTEgMTIuMTE3IDUwLjcgMTIuMzE3IDUwLjUgMTIuNjE3IEwgNDUuMyAyMC4yMTcgTCA0My4xIDEyLjkxNyBDIDQzIDEyLjQxNyA0Mi41IDEyLjExNyA0Mi4xIDEyLjExNyBMIDM4LjQgMTIuMTE3IEMgMzggMTIuMTE3IDM3LjYgMTIuNTE3IDM3LjggMTMuMDE3IEwgNDEuOSAyNS4xMTcgTCAzOCAzMC41MTcgQyAzNy43IDMwLjkxNyAzOCAzMS41MTcgMzguNSAzMS41MTcgTCA0Mi4yIDMxLjUxNyBDIDQyLjYgMzEuNTE3IDQyLjkgMzEuMzE3IDQzLjEgMzEuMDE3IEwgNTUuNiAxMy4wMTcgQyA1NS45IDEyLjcxNyA1NS42IDEyLjExNyA1NS4xIDEyLjExNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA2Ny41IDQuOTE3IEwgNTkuNyA0LjkxNyBDIDU5LjIgNC45MTcgNTguNyA1LjMxNyA1OC42IDUuODE3IEwgNTUuNSAyNS43MTcgQyA1NS40IDI2LjExNyA1NS43IDI2LjQxNyA1Ni4xIDI2LjQxNyBMIDYwLjEgMjYuNDE3IEMgNjAuNSAyNi40MTcgNjAuOCAyNi4xMTcgNjAuOCAyNS44MTcgTCA2MS43IDIwLjExNyBDIDYxLjggMTkuNjE3IDYyLjIgMTkuMjE3IDYyLjggMTkuMjE3IEwgNjUuMyAxOS4yMTcgQyA3MC40IDE5LjIxNyA3My40IDE2LjcxNyA3NC4yIDExLjgxNyBDIDc0LjUgOS43MTcgNzQuMiA4LjAxNyA3My4yIDYuODE3IEMgNzIgNS42MTcgNzAuMSA0LjkxNyA2Ny41IDQuOTE3IFogTSA2OC40IDEyLjIxNyBDIDY4IDE1LjAxNyA2NS44IDE1LjAxNyA2My44IDE1LjAxNyBMIDYyLjYgMTUuMDE3IEwgNjMuNCA5LjgxNyBDIDYzLjQgOS41MTcgNjMuNyA5LjMxNyA2NCA5LjMxNyBMIDY0LjUgOS4zMTcgQyA2NS45IDkuMzE3IDY3LjIgOS4zMTcgNjcuOSAxMC4xMTcgQyA2OC40IDEwLjUxNyA2OC41IDExLjIxNyA2OC40IDEyLjIxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA5MC43IDEyLjExNyBMIDg3IDEyLjExNyBDIDg2LjcgMTIuMTE3IDg2LjQgMTIuMzE3IDg2LjQgMTIuNjE3IEwgODYuMiAxMy42MTcgTCA4NS45IDEzLjIxNyBDIDg1LjEgMTIuMDE3IDgzLjMgMTEuNjE3IDgxLjUgMTEuNjE3IEMgNzcuNCAxMS42MTcgNzMuOSAxNC43MTcgNzMuMiAxOS4xMTcgQyA3Mi44IDIxLjMxNyA3My4zIDIzLjQxNyA3NC42IDI0LjgxNyBDIDc1LjcgMjYuMTE3IDc3LjQgMjYuNzE3IDc5LjMgMjYuNzE3IEMgODIuNiAyNi43MTcgODQuNSAyNC42MTcgODQuNSAyNC42MTcgTCA4NC4zIDI1LjYxNyBDIDg0LjIgMjYuMDE3IDg0LjUgMjYuNDE3IDg0LjkgMjYuNDE3IEwgODguMyAyNi40MTcgQyA4OC44IDI2LjQxNyA4OS4zIDI2LjAxNyA4OS40IDI1LjUxNyBMIDkxLjQgMTIuNzE3IEMgOTEuNCAxMi41MTcgOTEuMSAxMi4xMTcgOTAuNyAxMi4xMTcgWiBNIDg1LjUgMTkuMzE3IEMgODUuMSAyMS40MTcgODMuNSAyMi45MTcgODEuMyAyMi45MTcgQyA4MC4yIDIyLjkxNyA3OS40IDIyLjYxNyA3OC44IDIxLjkxNyBDIDc4LjIgMjEuMjE3IDc4IDIwLjMxNyA3OC4yIDE5LjMxNyBDIDc4LjUgMTcuMjE3IDgwLjMgMTUuNzE3IDgyLjQgMTUuNzE3IEMgODMuNSAxNS43MTcgODQuMyAxNi4xMTcgODQuOSAxNi43MTcgQyA4NS41IDE3LjQxNyA4NS43IDE4LjMxNyA4NS41IDE5LjMxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA5NS4xIDUuNDE3IEwgOTEuOSAyNS43MTcgQyA5MS44IDI2LjExNyA5Mi4xIDI2LjQxNyA5Mi41IDI2LjQxNyBMIDk1LjcgMjYuNDE3IEMgOTYuMiAyNi40MTcgOTYuNyAyNi4wMTcgOTYuOCAyNS41MTcgTCAxMDAgNS42MTcgQyAxMDAuMSA1LjIxNyA5OS44IDQuOTE3IDk5LjQgNC45MTcgTCA5NS44IDQuOTE3IEMgOTUuNCA0LjkxNyA5NS4yIDUuMTE3IDk1LjEgNS40MTcgWiI+PC9wYXRoPjwvc3ZnPg==" alt="PayPal" class="paypal-logo paypal-logo-paypal paypal-logo-color-blue" style="visibility: visible;"></div><script>(function(){var n={BLOCK:"block",INLINE_BLOCK:"inline-block",NONE:"none",VISIBLE:"visible",HIDDEN:"hidden"},o={IMG:"img",OPTIONAL:"[optional]"};function r(n,o){return o=o||document,[].slice.call(o.querySelectorAll(n))}function t(o){o.style.display=n.NONE}function l(o){o.style.visibility=n.VISIBLE}function e(o){o.style.visibility=n.HIDDEN}function i(o){return o.every((function(o){return function(n){var o=n.getBoundingClientRect();return Boolean(o.height&&o.width)}(o)||function(o){var r=window.getComputedStyle(o);return!r||r.display===n.NONE}(o)}))}function C(n){if("number"==typeof n)return n;var o=n.match(/^([0-9]+)px$/);if(!o)throw new Error("Could not match css value from "+n);return parseInt(o[1],10)}function a(n){if(!n.offsetWidth||!n.offsetHeight)return!1;if(n.offsetWidth<n.scrollWidth||n.offsetHeight<n.scrollHeight)return!0;var o=n.parentNode;if(!o)return!1;var r=n.getBoundingClientRect(),t=r.top,l=r.bottom,e=r.left,i=r.right,a=o.getBoundingClientRect(),L=a.top,s=a.bottom,u=a.left,f=a.right,c=window,p=c.innerWidth,d=c.innerHeight,h=window.getComputedStyle(n),g=h.paddingLeft,y=h.paddingRight,m=h.paddingBottom;return t+=C(h.paddingTop),e+=C(g),i+=C(y),l+=C(m),t<L||e<u||i>f||l>s||t<0||t<0||i>p||l>d}var L=r(o.IMG),s=function(n){for(var o=[],r=0;r<n.length;r++){var t=n[r];-1===o.indexOf(t)&&o.push(t)}return o}(r(o.OPTIONAL).map((function(n){return n.parentElement})).filter(Boolean));function u(){s.forEach((function(i){var C=[].slice.call(i.children),L=r(o.OPTIONAL,i);C.forEach((function(o){return function(o,r){void 0===r&&(r=n.INLINE_BLOCK),o.style.display=r}(o)})),C.some(a)?(L.forEach(t),L.forEach(e)):L.forEach(l)}))}u(),function(n,o){if(i(n))o();else var r=setInterval((function(){i(n)&&(clearInterval(r),o())}),5)}(L,(function(){L.forEach(l),u(),document.addEventListener("DOMContentLoaded",u),window.addEventListener("load",u),window.addEventListener("resize",u)}))})()</script></div></div>

@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+  <div class="card">
+  <div class="card-body pb-2">
+  <div class="row justify-content-center">
+
+    <div class="col-md-8">
+      <form class="form-horizontal">
+
+
+<!-- Form Name  <legend>PRODUCTS</legend>-->
+
+
+<!-- Text input-->
+
+
+<!-- Text input-->
+<div class="form-inline pb-2 pt-3">
+  <label class="col-md-3 control-label " for="product_name">Product Name</label>  
+  <div class="col-md-9">
+  <input id="product_name" name="product_name" placeholder="Product name" class="form-control input-md w-75" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+
+
+<!-- Select Basic -->
+<div class="form-inline pt-2">
+  <label class="col-md-3 control-label" for="product_categorie">Product Category</label>
+  <div class="col-md-9">
+    <select id="product_categorie" name="product_categorie" class="form-control w-75">
+      <option value="1">1</option>
+      <option value="2">2</option>  
+    </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-inline pt-2">
+  <label class="col-md-3 control-label" for="available_quantity">Quantity</label>  
+  <div class="col-md-9">
+  <input id="available_quantity" name="available_quantity" placeholder="Quantity" class="form-control input-md w-75" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-inline pt-2">
+  <label class="col-md-3 control-label" for="product_weight">Weight</label>  
+  <div class="col-md-9">
+  <input id="product_weight" name="product_weight" placeholder="Weight" class="form-control input-md w-75" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-inline pt-2">
+  <label class="col-md-3 control-label" for="percentage_discount">selling Price</label>  
+  <div class="col-md-9">
+  <input id="percentage_discount" name="percentage_discount" placeholder="selling Price" class="form-control input-md w-75" required="" type="text">
+    
+  </div>
+</div><textarea class="form-control w-75" id="product_name_fr" name="product_name_fr"></textarea>
+
+<!-- Text input-->
+<div class="form-inline pt-2">
+  <label class="col-md-3 control-label" for="percentage_discount">Discount Price</label>  
+  <div class="col-md-9">
+  <input id="percentage_discount" name="percentage_discount" placeholder="Discount Price" class="form-control input-md w-75" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-inline pt-2">
+  <label class="col-md-3 control-label" for="product_description">Product Short discription</label>
+  <div class="col-md-9">                     
+    <textarea class="form-control w-75" id="product_description" name="product_description"></textarea>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-inline pt-2">
+  <label class="col-md-3 control-label" for="product_name_fr">Product detailed discription</label>
+  <div class="col-md-9">                     
+    <textarea class="form-control w-75" id="product_name_fr" name="product_name_fr"></textarea>
+  </div>
+</div>
+
+
+<!-- Text input-->
+
+
+    
+ <!-- File Button --> 
+<div class="form-inline pt-2">
+  <label class="col-md-3 control-label" for="filebutton">Product image</label>
+  <div class="col-md-9">
+    <input id="filebutton" name="filebutton" class="input-file" type="file">
+  </div>
+</div>
+<!-- File Button --> 
+
+
+<!-- Button -->
+<div class="form-group pt-2">
+  
+  <div class="col-md-9 text-right">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+  </div>
+  </div>
+
+
+</form>
+
+    </div>
+  </div>
+  
+</div>
+</div>
+
+{% endblock content %}

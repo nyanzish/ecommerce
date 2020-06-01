@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+  <div class="card">
+  <div class="card-body pb-2">
+  <div class="row justify-content-center">
+
+    <div class="col-md-8">
+        <article class="card">
+            <div class="card-body p-5">
+            
+            <ul class="nav bg radius nav-pills nav-fill mb-3" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active show" data-toggle="pill" href="#nav-tab-card">
+                <i class="fas fa-shopping-bag"></i> Upload Product</a></li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#nav-tab-paypal">
+                <i class=" "></i>Orders</a></li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#nav-tab-bank">
+                <i class=" "></i>Details</a></li>
+            </ul>
+            
+            <div class="tab-content">
+            <div class="tab-pane fade active show" id="nav-tab-card">
+                
+
+
+            </div> <!-- tab-pane.// -->
+            <div class="tab-pane fade" id="nav-tab-paypal">
+                    <div class="table-responsive">
+                            <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col"><i class="fas fa-shopping-bag"></i></th>
+                                        <th scope="col">Item title</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Total Item price</th>
+                                        <th scope="col">Ordered By</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for order_item in object %}
+                                    <tr>
+                                        <th scope="row">{{ forloop.counter }}</th>
+                                        <td>{{ order_item.item.title }}</td>
+                                        <td>{{ order_item.item.price }}</td>
+                                        <td>
+                                            {{ order_item.quantity }}{%comment%}{{ order_item.item.saler }}{%endcomment%}
+                                            
+                                        <td>
+                                            {{ order_item.get_total_item_price }}
+                                        </td>
+                                        <td>
+                                                {{ order_item.user }}
+                                            </td>
+                                    </tr>
+                                    {% empty %}
+                                    <tr>
+                                        <td>You don't have an order yet </td>
+                                    </tr>
+                                    {% endfor %}
+                                    <tr>
+                                        <td colspan="4"><b>Order total</b></td>
+                                        <td>UGX {{total}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+
+    
+                                
+                            
+          
+            </div> <!-- tab-pane.// -->
+            </div> <!-- tab-content .// -->
+            
+            </div> <!-- card-body.// -->
+            </article>
+      
+
+    </div>
+  </div>
+  
+</div>
+</div>
+</div>
+
+{% endblock content %}

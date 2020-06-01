@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<section class="section-links bg padding-y-sm ml-auto">
+<div class="card">
+
+	<div class="table-responsive">
+		<table class="table table-hover">
+				<thead>
+				<tr>
+					<th scope="col"><i class="fas fa-shopping-bag"></i></th>
+					<th scope="col">Item title</th>
+					<th scope="col">Price</th>
+					<th scope="col">Quantity</th>
+					<th scope="col">Total Item price</th>
+				</tr>
+				</thead>
+				<tbody>
+					{% for order_item in object.items.all %}
+				<tr>
+					<th scope="row">{{ forloop.counter }}</th>
+					<td>{{ order_item.item.title }}</td>
+					<td>{{ order_item.item.price }}</td>
+					<td><a href="{{ order_item.item.get_remove_from_cart_url }}"><i class="fas fa-minus mr-2"></i></a>
+						{{ order_item.quantity }}{%comment%}{{ order_item.item.saler }}{%endcomment%}
+						<a href="{% url 'shop:add_to_cart' order_item.item.id %}"><i class="fas fa-plus ml-2"></i></td></a>
+					<td>
+						{% if order_item.item.discount_price %}
+							UGX {{ order_item.get_total_discount_item_price }}
+							<span class="badge badge-success">Saving UGX {{ order_item.get_amount_saved }}</span>
+						{% else %}
+							{{ order_item.get_total_item_price }}
+						{% endif %}
+						<a style="color: red;" href="{{ order_item.item.get_remove_from_cart_url }}">
+							<i class="fas fa-trash-alt float-right"></i>
+						</a>
+					</td>
+				</tr>
+				{% empty %}
+				<tr>
+					<td>Your cart is empty</td>
+				</tr>
+				{% endfor %}
+				<tr>
+					<td colspan="4"><b>Order total</b></td>
+					<td>UGX {{ object.get_total }}</td>
+				</tr>
+				</tbody>
+			</table>
+	</div>
+</div>
+</div> <!-- card.// -->
+</section>
+                                   
+
+      <div class="col-md-5 ml-auto">
+                                        <div class="cart-page-total">
+                                            
+                                            <table class="table table-borderless">
+											  <thead>
+											    <tr>
+											      <th><h3>Cart totals</h3></th>
+											      
+											    </tr>
+											  </thead>
+											  <tbody>
+											    <tr>
+											      <th scope="row">1</th>
+											      <td>Delivery price</td>
+											      <td>Total</td>
+											    </tr>
+											    <tr>
+											      <th scope="row">2</th>
+											      <td>UGX {{ shipping_price }}</td>
+											      <td>UGX {{ amount }}</td>
+											    </tr>
+											  </tbody>
+											</table>
+                                            
+                                            <a href="{% url 'shop:checkout' %}" class="btn btn-primary">Proceed to checkout</a>
+
+											<a href="/" class="btn btn-warning">Continue Shopping</a>
+											<a href="/report_view" class="btn btn-warning">Test</a>
+                                  
+                                        </div>
+                                    </div>
+                                
+		</div>
+	</div>
+</div>
+
+
+{% block extra_scripts %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    {% endblock extra_scripts %}
+
+{% endblock content %}

@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+<script>
+    $(document).ready(function(){$('select option:not(:selected)').attr('disabled',true);});
+    $('form').submit(function () { $('[disabled]').removeAttr('disabled'); })
+
+</script>
+
+{% block content %}
+
+
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+  <div class="card">
+  <div class="card-body pb-2">
+  <div class="row justify-content-center">
+
+    <div class="col-md-8">
+        <article class="card">
+            <div class="card-body p-5">
+            
+            <ul class="nav bg radius nav-pills nav-fill mb-3" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active show" data-toggle="pill" href="#nav-tab-card">
+                <i class="fas fa-shopping-bag"></i> Upload Product</a></li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#nav-tab-paypal">
+                <i class=" "></i>Orders</a></li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#nav-tab-bank">
+                <i class=" "></i>Details</a></li>
+            </ul>
+            
+            <div class="tab-content">
+            <div class="tab-pane fade active show" id="nav-tab-card">
+                <form class="form-horizontal" method="POST" enctype="multipart/form-data">
+
+                  {% csrf_token %}
+                      {{ form|crispy }}
+                  <input type="submit" class="btn btn-primary btn-lg" name="register">
+          
+              </form>
+
+              {%comment%} <form class="form-horizontal" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <div class="col-md-12"><strong>Title:</strong></div>
+                    <div class="col-md-12">
+
+                        {{ form.title }}
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="col-md-12"><strong>Price:</strong></div>
+                    <div class="col-md-12">
+                        {{ form.price }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12"><strong>Discount price:</strong></div>
+                    <div class="col-md-12">
+                        {{ form.discount_price }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12"><strong>Category:</strong></div>
+                    <div class="col-md-12">
+                        {{ form.category }}
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="col-md-12"><strong>Slug:</strong></div>
+                    <div class="col-md-12">
+                        {{ form.slug }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12"><strong>Description:</strong></div>
+                    <div class="col-md-12">
+                        {{ form.description }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12"><strong>Saler:</strong></div>
+                    <div class="col-md-12">
+                        {{ form.saler }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12"><strong>Image:</strong></div>
+                    <div class="col-md-12">
+                        {{ form.image }}
+                    </div>
+                </div>
+                <div class="form-group">
+                   
+                    <div class="col-md-12">
+                        
+                    </div>
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="submit" class="btn btn-primary btn-lg" name="register">
+                    </div>
+                </div>
+            </div>
+            </form>{% endcomment %}
+
+            </div> <!-- tab-pane.// -->
+            <div class="tab-pane fade" id="nav-tab-paypal">
+                    <div class="table-responsive">
+                            <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col"><i class="fas fa-shopping-bag"></i></th>
+                                        <th scope="col">Item title</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Total Item price</th>
+                                        <th scope="col">Ordered By</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for order_item in object %}
+                                    <tr>
+                                        <th scope="row">{{ forloop.counter }}</th>
+                                        <td>{{ order_item.item.title }}</td>
+                                        <td>{{ order_item.item.price }}</td>
+                                        <td>
+                                            {{ order_item.quantity }}{%comment%}{{ order_item.item.saler }}{%endcomment%}
+                                            
+                                        <td>
+                                            {{ order_item.get_total_item_price }}
+                                        </td>
+                                        <td>
+                                                {{ order_item.user }}
+                                            </td>
+                                    </tr>
+                                    {% empty %}
+                                    <tr>
+                                        <td>You don't have an order yet </td>
+                                    </tr>
+                                    {% endfor %}
+                                    <tr>
+                                        <td colspan="4"><b>Order total</b></td>
+                                        <td>UGX {{total}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+
+    
+                                <div class="cart-page-total">
+                                    
+                                    <table class="table table-borderless">
+                                      <thead>
+                                        <tr>
+                                          <th><h4>Net Amount made(order_totals-10%(order_totals))</h4></th>
+                                          
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          
+                                          <td>10%(order_totals)</td>
+                                          <td>Net Amount</td>
+                                        </tr>
+                                        <tr>
+                                          
+                                          <td>UGX {{ deduct }}</td>
+                                          <td>UGX {{ netamount }}</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                    
+                                    <a href="/withdraw_request" class="btn btn-primary">Request Withdraw</a>
+
+                                    <a href="/" class="btn btn-warning">Market place</a>
+                                    <a href="/report_view" class="btn btn-warning">Test</a>
+                          
+                                </div>
+                            
+          
+            </div> <!-- tab-pane.// -->
+            </div> <!-- tab-content .// -->
+            
+            </div> <!-- card-body.// -->
+            </article>
+      
+
+    </div>
+  </div>
+  
+</div>
+</div>
+</div>
+
+{% endblock content %}
