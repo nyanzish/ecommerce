@@ -8,7 +8,7 @@ django-debug-toolbar==1.10.1
 django-model-utils==3.2.0
 django-money==1.0
 django-star-ratings==0.8.0
-Pillow==6.0.0
+Pillow==8.2.0
 reportlab==3.5.18
 stripe==2.27.0
 twilio==6.33.1
